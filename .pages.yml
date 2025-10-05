@@ -42,7 +42,7 @@ content:
       - { name: date, label: Date, type: string }
       - { name: ticketlink, label: Ticket Link, type: string }
       - { name: image, label: Image, type: image }
-      - { name: bands, label: Bands, type: reference, options: { collection: bands, multiple: true,  label: "{bandname}" } }
+      - { name: bands, label: Bands, type: reference, options: { collection: bands, multiple: true,  label: "{bandname}", value: "{id}" } }
   - name: about
     label: About page
     type: file
