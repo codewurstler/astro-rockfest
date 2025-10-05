@@ -1,6 +1,7 @@
 ---
 bandname: Justice League
-logo: /adam_illu.png
+logo: /justice-league-logo.png
+image: /justice-league-band.jpeg
 slug: justice-league
 draft: false
 ---
