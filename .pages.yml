@@ -27,8 +27,9 @@ content:
     view:
       fields: [ title, draft, date ]
     fields:
-      - { name: name, label: Bandname, type: string }
-      - { name: title, label: Title, type: string, required: true }
+      - { name: bandname, label: Bandname, type: string, required: true }
+      - { name: logo, label: Logo, type: string }
+      - { name: image, label: Image, type: string }
       - { name: slug, label: Slug, type: string }
       - { name: draft, label: Draft, type: boolean }
       - { name: description, label: Description, type: rich-text }
