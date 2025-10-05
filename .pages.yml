@@ -33,6 +33,16 @@ content:
       - { name: slug, label: Slug, type: string }
       - { name: draft, label: Draft, type: boolean }
       - { name: description, label: Description, type: rich-text }
+  - name: home
+    label: Home page
+    type: file
+    path: src/pages/home.md
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: date, label: Date, type: string }
+      - { name: ticketlink, label: Ticket Link, type: string }
+      - { name: image, label: Image, type: image }
+      - { name: bands, label: Bands, type: reference, options: { collection: bands, multiple: true } }
   - name: about
     label: About page
     type: file
