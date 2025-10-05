@@ -5,4 +5,4 @@ image: /justice-league-band.jpeg
 slug: justice-league
 draft: false
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation **ullamco** laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Stimmung, Energie und Rock'n'Roll: All das und noch viel mehr bietet der Bühnenauftritt von Justice League. Die waschechte Oberfreiämter Band überzeugt seit ihrer Gründung im Jahr 2016 mit Leidenschaft, Begeisterung, einer Priese Talent sowie Humor und animiert dadurch zum Pogen, Tanzen und Feiern. Gegründet als Cover Band geben sie aber auch Eigenkompositionen zum Besten, mit dem Ziel jedem Lied seine gerechte Ladung Rock zu verleihen.
