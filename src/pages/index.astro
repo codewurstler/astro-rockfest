@@ -1,14 +1,17 @@
 ---
-import { getCollection, getEntries, getEntry } from "astro:content";
+import { getEntries } from "astro:content";
+import { Picture } from "astro:assets";
+
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Hr from "@components/Hr.astro";
 
 import * as homeContent from "./home.md";
 
 const bandSlugs = homeContent.frontmatter.bands;
-console.log(bandSlugs);
+const bands = await getEntries(
+  bandSlugs.map((slug: string) => ({ collection: "bands", slug }))
+);
 ---
 
 <Layout>
@@ -16,7 +19,6 @@ console.log(bandSlugs);
   <main id="main-content">
     <section id="hero">
       <h1>{homeContent.frontmatter.title}</h1>
-      <ul></ul>
       <a
         target="_blank"
         href="/rss.xml"
@@ -34,8 +36,25 @@ console.log(bandSlugs);
         <span class="sr-only">RSS Feed</span>
       </a>
     </section>
-
-    <Hr />
+    <section id="bands">
+      <h2>Bands</h2>
+      <ul>
+        {
+          bands.map(band => (
+            <li>
+              <Picture
+                src={band.data.logo}
+                formats={["avif", "webp"]}
+                alt={band.data.bandname}
+                width={200}
+                height={200}
+              />
+              {band.data.bandname}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
   </main>
   <Footer />
 </Layout>
