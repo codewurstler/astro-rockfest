@@ -28,8 +28,8 @@ content:
       fields: [ title, draft, date ]
     fields:
       - { name: bandname, label: Bandname, type: string, required: true }
-      - { name: logo, label: Logo, type: string }
-      - { name: image, label: Image, type: string }
+      - { name: logo, label: Logo, type: image }
+      - { name: image, label: Image, type: image }
       - { name: slug, label: Slug, type: string }
       - { name: draft, label: Draft, type: boolean }
       - { name: description, label: Description, type: rich-text }
