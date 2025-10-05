@@ -6,6 +6,7 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import * as homeContent from "./home.md";
+import Image from "astro/components/Image.astro";
 
 const bandSlugs = homeContent.frontmatter.bands;
 
@@ -25,29 +26,39 @@ const bandsWithContent = await Promise.all(
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1>{homeContent.frontmatter.title}</h1>
+      <div class="container">
+        <h1>{homeContent.frontmatter.title}</h1>
+      </div>
     </section>
 
     <section id="bands">
-      <h2>Bands</h2>
-      <ul>
-        {
-          bandsWithContent.map(band => (
-            <li>
-              <Picture
-                src={band.data.logo}
-                formats={["avif", "webp"]}
-                alt={band.data.bandname}
-                width={200}
-                height={200}
-              />
-              <h3>{band.data.bandname}</h3>
-
-              <band.Content />
-            </li>
-          ))
-        }
-      </ul>
+      <div class="container">
+        <h2>Bands</h2>
+        <ul>
+          {
+            bandsWithContent.map(band => (
+              <div class="card bg-base-100 w-96 shadow-sm">
+                <figure class="px-10 pt-10">
+                  <Image
+                    src={band.data.image}
+                    alt="Shoes"
+                    class="rounded-xl"
+                    width={200}
+                    height={200}
+                  />
+                </figure>
+                <div class="card-body items-center text-center">
+                  <h2 class="card-title">{band.data.bandname}</h2>
+                  <band.Content />
+                  <div class="card-actions">
+                    <button class="btn btn-primary">More</button>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </ul>
+      </div>
     </section>
   </main>
   <Footer />
