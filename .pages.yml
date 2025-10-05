@@ -32,7 +32,7 @@ content:
       - { name: image, label: Image, type: image }
       - { name: slug, label: Slug, type: string }
       - { name: draft, label: Draft, type: boolean }
-      - { name: description, label: Description, type: rich-text }
+      - { name: body, label: Body, type: rich-text }
   - name: home
     label: Home page
     type: file
