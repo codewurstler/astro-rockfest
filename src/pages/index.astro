@@ -34,30 +34,30 @@ const bandsWithContent = await Promise.all(
     <section id="bands">
       <div class="container">
         <h2>Bands</h2>
-        <ul>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {
             bandsWithContent.map(band => (
-              <div class="card bg-base-100 w-96 shadow-sm">
-                <figure class="px-10 pt-10">
+              <div class="card" data-sal="slide-up">
+                <figure class="rounded-xl w-auto h-[300px]">
                   <Image
                     src={band.data.image}
                     alt="Shoes"
-                    class="rounded-xl"
+                    class="w-full h-full object-cover object-top"
                     width={200}
                     height={200}
                   />
                 </figure>
-                <div class="card-body items-center text-center">
+                <div class="card-body">
                   <h2 class="card-title">{band.data.bandname}</h2>
                   <band.Content />
-                  <div class="card-actions">
-                    <button class="btn btn-primary">More</button>
+                  <div class="card-actions w-full">
+                    <button class="btn btn-primary btn-wide">More</button>
                   </div>
                 </div>
               </div>
             ))
           }
-        </ul>
+        </div>
       </div>
     </section>
   </main>
