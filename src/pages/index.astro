@@ -37,7 +37,7 @@ const bandsWithContent = await Promise.all(
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {
             bandsWithContent.map(band => (
-              <div class="card" data-sal="slide-up">
+              <div class="card" data-aos="fade-up">
                 <figure class="rounded-xl w-auto h-[300px]">
                   <Image
                     src={band.data.image}

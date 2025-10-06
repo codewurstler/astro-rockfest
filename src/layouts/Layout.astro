@@ -1,6 +1,7 @@
 ---
 import { LOCALE, SITE } from "@config";
 import "@styles/base.css";
+import "aos/dist/aos.css";
 import { ViewTransitions } from "astro:transitions";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -111,6 +112,9 @@ const socialImageURL = new URL(
   </head>
   <body>
     <slot />
-    <script is:client type="module" src="/src/vendors/sal.js"></script>
+    <script>
+      import AOS from "aos";
+      AOS.init();
+    </script>
   </body>
 </html>
