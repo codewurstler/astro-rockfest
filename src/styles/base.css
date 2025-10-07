@@ -12,8 +12,11 @@
 }
 
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Permanent Marker', cursive;
+}
+
 h1 {
-    /* Mobile → 2XL: gets big on desktops */
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight tracking-tight;
 }
 
@@ -37,26 +40,15 @@ h6 {
     @apply text-sm sm:text-base md:text-lg font-medium leading-snug uppercase tracking-wide;
 }
 
-/* === Paragraphs === */
 p {
     @apply text-base sm:text-lg leading-relaxed mb-4;
 }
 
-/* “Lead” paragraph for hero sections or intros */
 .lead {
-    @apply text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-gray-700;
+    @apply text-lg sm:text-xl md:text-2xl font-light leading-relaxed;
 }
 
-/* === Lists & Misc === */
-ul, ol {
-    @apply mb-4 ml-6 list-disc;
-}
 
-a {
-    @apply text-blue-600 hover:text-blue-800 transition-colors;
-}
-
-/* === Optional: bump up font size on really large screens === */
 @media (min-width: 1280px) {
     h1 { @apply text-8xl; }
     h2 { @apply text-6xl; }
@@ -65,4 +57,53 @@ a {
 
 @utility btn {
     @apply rounded-full;
+}
+
+
+
+
+@utility navbar {
+    @apply rounded-full flex justify-between lg:px-10;
+}
+
+@utility menu {
+    li {
+        @apply px-1;
+    }
+
+    a {
+        @apply rounded-full p-2;
+    }
+
+    .highlight {
+        @apply bg-red-600 text-white hover:bg-red-800 border-1 border-base-100;
+    }
+}
+
+.headroom {
+    img {
+        @apply opacity-0 invisible transition-opacity duration-150;
+    }
+
+    .navbar {
+        @apply border-1 border-transparent transition-all duration-300;
+    }
+
+    &.headroom--not-top {
+
+        .navbar {
+            @apply bg-gray-500/40 bg-clip-padding backdrop-filter backdrop-blur backdrop-saturate-100 backdrop-contrast-100 border-base-100;
+        }
+
+
+        img {
+            @apply opacity-100 visible;
+        }
+
+        .navbar {
+            a {
+                @apply text-base-100;
+            }
+        }
+    }
 }
