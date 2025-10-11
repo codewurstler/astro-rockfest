@@ -7,6 +7,8 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import * as homeContent from "./home.md";
 import Image from "astro/components/Image.astro";
+import HomeHero from "../components/HomeHero.astro";
+console.log(homeContent.frontmatter);
 
 const bandSlugs = homeContent.frontmatter.bands;
 
@@ -24,13 +26,12 @@ const bandsWithContent = await Promise.all(
 
 <Layout>
   <Header />
+  <HomeHero
+    title={homeContent.frontmatter.title}
+    date={homeContent.frontmatter.date}
+    image={homeContent.frontmatter.image}
+  />
   <main id="main-content">
-    <section id="hero">
-      <div class="container">
-        <h1>{homeContent.frontmatter.title}</h1>
-      </div>
-    </section>
-
     <section id="bands">
       <div class="container">
         <h2>Bands</h2>

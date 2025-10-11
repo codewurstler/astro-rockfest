@@ -1,0 +1,17 @@
+---
+interface Props {
+  title?: string;
+  date?: string;
+  image?: string;
+}
+
+const { title, date, image } = Astro.props;
+---
+
+<h1>{image}</h1>
+<div class="home-hero" style="background-image: url({image});">
+  <div class="container">
+    <h1 class="sr-only">{title}</h1>
+    <h2>{date}</h2>
+  </div>
+</div>
