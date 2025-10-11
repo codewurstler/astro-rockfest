@@ -1,6 +1,5 @@
 ---
 import { getEntries } from "astro:content";
-import { Picture } from "astro:assets";
 
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
@@ -8,7 +7,6 @@ import Footer from "@components/Footer.astro";
 import * as homeContent from "./home.md";
 import Image from "astro/components/Image.astro";
 import HomeHero from "../components/HomeHero.astro";
-console.log(homeContent.frontmatter);
 
 const bandSlugs = homeContent.frontmatter.bands;
 
@@ -22,6 +20,8 @@ const bandsWithContent = await Promise.all(
     return { ...band, Content };
   })
 );
+
+console.log(homeContent.frontmatter);
 ---
 
 <Layout>
@@ -30,6 +30,7 @@ const bandsWithContent = await Promise.all(
     title={homeContent.frontmatter.title}
     date={homeContent.frontmatter.date}
     image={homeContent.frontmatter.image}
+    link={homeContent.frontmatter.ticketlink}
   />
   <main id="main-content">
     <section id="bands">
@@ -42,7 +43,7 @@ const bandsWithContent = await Promise.all(
                 <figure class="rounded-xl w-auto h-[300px]">
                   <Image
                     src={band.data.image}
-                    alt="Shoes"
+                    alt={band.data.bandname}
                     class="w-full h-full object-cover object-top"
                     width={200}
                     height={200}

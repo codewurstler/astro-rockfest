@@ -1,17 +1,42 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo.svg";
+
 interface Props {
   title?: string;
   date?: string;
   image?: string;
+  link?: string;
 }
 
-const { title, date, image } = Astro.props;
+const { title, date, image, link } = Astro.props;
 ---
 
-<h1>{image}</h1>
-<div class="home-hero" style="background-image: url({image});">
-  <div class="container">
+<div class="container">
+  <div class="home-hero" style={{ "--hero-bg": `url(${image})` }}>
     <h1 class="sr-only">{title}</h1>
-    <h2>{date}</h2>
+    <Image
+      src={logo}
+      class="mt-10"
+      alt="Rockfest Logo"
+      width={468}
+      height={200}
+      data-aos="fade-up"
+    />
+    <div class="content">
+      <h2 data-aos="fade-up" data-aos-delay="100">{date}</h2>
+      <p class="lead" data-aos="fade-up" data-aos-delay="200">
+        Jugendhaus Oase Küssnacht
+      </p>
+      <a
+        role="button"
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary btn-xl btn-wide"
+        data-aos="fade-up"
+        data-aos-delay="300">Tickets</a
+      >
+    </div>
   </div>
 </div>
