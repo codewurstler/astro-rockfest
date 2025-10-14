@@ -13,13 +13,15 @@ const { title, date, image, link } = Astro.props;
 ---
 
 <div class="container">
-  <div class="home-hero" style={{ "--hero-bg": `url(${image})` }}>
-    <h1 class="sr-only">{title}</h1>
+  <h1 class="sr-only">{title}</h1>
+  <div
+    class="home-hero grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-32 content-center"
+    style={{ "--hero-bg": `url(${image})` }}
+  >
     <Image
       src={logo}
-      class="mt-10"
       alt="Rockfest Logo"
-      width={468}
+      width={600}
       height={200}
       data-aos="fade-up"
     />

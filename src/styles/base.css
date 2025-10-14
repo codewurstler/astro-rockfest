@@ -16,10 +16,6 @@
 @utility container {
     padding-inline: 1rem;
     margin-inline: auto;
-
-    @variant md {
-        padding-inline: 0;
-    }
 }
 
 @utility font-sans {
@@ -114,14 +110,17 @@ p {
 }
 
 .home-hero {
-    @apply bg-cover bg-center bg-no-repeat rounded-4xl h-[85vh] text-white p-10 -mt-[56px];
+    @apply bg-cover bg-center bg-no-repeat rounded-4xl h-[95vh] text-white p-10 -mt-[56px];
     background-image: var(--hero-bg);
 
+    img {
+    }
+
     .content {
-        @apply ml-10 mt-20 text-base;
+        @apply text-center lg:mt-32 lg:w-fit;
 
         h2 {
-            @apply font-sans font-bold;
+
         }
     }
 }

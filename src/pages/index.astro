@@ -32,10 +32,10 @@ console.log(homeContent.frontmatter);
     image={homeContent.frontmatter.image}
     link={homeContent.frontmatter.ticketlink}
   />
-  <main id="main-content">
+  <main id="main-content" class="my-16">
     <section id="bands">
       <div class="container">
-        <h2>Bands</h2>
+        <h2 data-aos="fade-up">Bands</h2>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {
             bandsWithContent.map(band => (
